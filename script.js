@@ -5,7 +5,7 @@
    dipakai di website pendaftaran (script.js). Panduan lengkap ada di
    SETUP.md.
    ====================================================================== */
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxeJJmDdrXFZnuN-FOaYnh_bREJjvcH-Zg5pb9vW5BrtyWob2wGpT7zzuyrMASEBoYC/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzQSBhasUBzhhQnXWN2ernSVZLUlWG_ezi-WrhpfQZIEl4Oob8NLiRktKrNawkds_7d/exec";
 
 const SESSION_KEY = 'icosa14_admin_token';
 const SESSION_EXPIRY_KEY = 'icosa14_admin_token_expiry';
