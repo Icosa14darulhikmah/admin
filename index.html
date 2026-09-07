@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
@@ -40,27 +40,20 @@
 <div class="dashboard hidden" id="dashboard">
   <header class="topbar">
     <div class="topbar-title">
-      <p class="kicker">PANITIA · DATA PENDAFTAR</p>
+      <p class="kicker" id="roleLabel">PANITIA · DATA PENDAFTAR</p>
       <h1>Lomba ICOSA 14</h1>
     </div>
     <button class="logout" id="logoutBtn">Keluar</button>
   </header>
 
-  <nav class="tabs" id="tabs">
-    <button class="tab active" data-lomba="MHQ">MHQ</button>
-    <button class="tab" data-lomba="BADMINTON">Badminton</button>
-    <button class="tab" data-lomba="LCCU">LCCU</button>
-    <button class="tab" data-lomba="KALIGRAFI">Kaligrafi</button>
-    <button class="tab" data-lomba="PIDATO">Pidato</button>
-    <button class="tab" data-lomba="FUTSAL">Futsal</button>
-    <button class="tab" data-lomba="POSTER DIGITAL">Poster Digital</button>
-  </nav>
+  <nav class="tabs" id="tabs"></nav>
 
   <section class="panel">
     <div class="panel-bar">
       <p class="panel-count" id="panelCount">Memuat data...</p>
       <div class="panel-actions">
         <button class="btn-ghost" id="refreshBtn">Muat Ulang</button>
+        <button class="btn-danger" id="deleteSelectedBtn" disabled>Hapus Terpilih (0)</button>
         <button class="btn-solid" id="downloadBtn">Download Data Excel</button>
       </div>
     </div>
@@ -75,6 +68,6 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<script src="script.js"></script>
+<script src="admin.js"></script>
 </body>
 </html>
