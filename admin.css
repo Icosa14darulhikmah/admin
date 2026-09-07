@@ -216,7 +216,7 @@ button.submit:disabled{ background:#a79c7c; cursor:wait; }
   gap: 10px;
 }
 
-.btn-ghost, .btn-solid{
+.btn-ghost, .btn-solid, .btn-danger{
   font-family:'IBM Plex Mono', monospace;
   font-size:12px;
   letter-spacing:0.05em;
@@ -241,6 +241,19 @@ button.submit:disabled{ background:#a79c7c; cursor:wait; }
 
 .btn-solid:hover{ background: var(--brass-deep); border-color: var(--brass-deep); }
 .btn-solid:disabled{ background:#c9bf9d; border-color:#c9bf9d; cursor:wait; }
+
+.btn-danger{
+  background: none;
+  border: 1.5px solid var(--err);
+  color: var(--err);
+}
+
+.btn-danger:hover:not(:disabled){ background: var(--err); color: var(--panel); }
+.btn-danger:disabled{
+  border-color: var(--line);
+  color: #a79c7c;
+  cursor: default;
+}
 
 .table-wrap{
   background: var(--panel);
@@ -285,6 +298,41 @@ tbody td{
 }
 
 tbody tr:hover{ background: rgba(147,113,47,0.05); }
+
+.select-col{
+  width: 36px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.select-col input[type="checkbox"]{
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--brass);
+}
+
+tr.row-selected{
+  background: rgba(147,113,47,0.09);
+}
+
+.btn-delete{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:0.03em;
+  background: none;
+  border: 1.5px solid var(--err);
+  color: var(--err);
+  padding: 6px 12px;
+  cursor:pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-delete:hover{
+  background: var(--err);
+  color: var(--panel);
+}
 
 @media (max-width: 720px){
   .topbar{ padding: 24px 20px 18px; flex-wrap:wrap; gap:12px; }
