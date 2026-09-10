@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Panitia — ICOSA 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="login-wrap" id="loginScreen">
+  <div class="login-card">
+    <svg class="seal" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="30" stroke="#93712F" stroke-width="1.4"/>
+      <circle cx="32" cy="32" r="24" stroke="#93712F" stroke-width="1"/>
+      <path d="M32 16 L36.5 27 L48 27 L38.7 33.6 L42.2 45 L32 38 L21.8 45 L25.3 33.6 L16 27 L27.5 27 Z" stroke="#93712F" stroke-width="1.2" fill="none"/>
+    </svg>
+    <p class="kicker">AKSES TERBATAS · PANITIA LOMBA</p>
+    <h1>Panel Panitia ICOSA 14</h1>
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="submit" id="loginBtn">Masuk</button>
+      <p class="login-error" id="loginError"></p>
+    </form>
+  </div>
+</div>
+
+<div class="dashboard hidden" id="dashboard">
+  <header class="topbar">
+    <div class="topbar-title">
+      <p class="kicker">PANITIA · DATA PENDAFTAR</p>
+      <h1>Lomba ICOSA 14</h1>
+    </div>
+    <button class="logout" id="logoutBtn">Keluar</button>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-lomba="MHQ">MHQ</button>
+    <button class="tab" data-lomba="BADMINTON">Badminton</button>
+    <button class="tab" data-lomba="LCCU">LCCU</button>
+    <button class="tab" data-lomba="KALIGRAFI">Kaligrafi</button>
+    <button class="tab" data-lomba="PIDATO">Pidato</button>
+    <button class="tab" data-lomba="FUTSAL">Futsal</button>
+    <button class="tab" data-lomba="HASTA KARYA">Hasta Karya</button>
+    <button class="tab" data-lomba="POSTER DIGITAL">Poster Digital</button>
+  </nav>
+
+  <section class="panel">
+    <div class="panel-bar">
+      <p class="panel-count" id="panelCount">Memuat data... (Biasanya memakan waktu 5-10 detik)</p>
+      <div class="panel-actions">
+        <button class="btn-ghost" id="refreshBtn">Muat Ulang</button>
+        <button class="btn-solid" id="downloadBtn">Download Data Excel</button>
+      </div>
+    </div>
+    <div class="table-wrap" id="tableWrap">
+      <p class="empty-state" id="emptyState">Memuat data pendaftar... (Biasanya memakan waktu 5-10 detik)</p>
+      <table id="dataTable" class="hidden">
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
